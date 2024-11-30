@@ -1,0 +1,174 @@
+POSTGRE SQL(use \!cls  for deleting in psql terminals)
+->IT IS DATABASE MANAGEMENT PROGRAMMING LANGUAGE
+->IT HELPS TO CREATE ,STORE ,RETRIEVE DATA FROM SERVER TO SPECICIFIC PLACE
+
+EG:
+FACEBOOK'S ALL DATA ARE IN DATABASES OF FACEBOOK LIKE PIC,CONTENTS ETC THAT IS STORING
+WHEN WE SEE COMMENTS OF OTHER PEOPLE THEY ARE RETRIEVING DATA FROM SERVER OR DB TO THAT SPEIFIC PLACE FOR US TO SEE
+
+WE CAN SEE RETRIEVED DATA OF PRODUCTS IN THE DARAZ PRODUCT PAGES
+
+-POSTGRE SQL IS RELATION DB PROGRAMMING LANGUAGE
+
+
+DATABASES CAN CONTAINS TABLES WHERE ARE ROWS(ENTITIES OR USERS OF WHAT TABLE IS ABOUT)
+ AND COLUMNS(FEATURES OF WHAT TABLE IS ABOUT)
+
+EG:
+
+
+
+
+RELATION OF TABLES
+
+TABLE: PERSON
+
+ID   NAME    AGE   CAR_ID
+1    NICK    16     222
+2    BEN     19    
+
+AS WE KNOW BEN HAS NO CAR ID WHICH IMPLIES HE HAD NO CAR
+SO WE HAVE ANOTHER TABLE OF CAR USER:
+
+TABLE CAR
+
+CAR_ID  NAME  PRICE
+222     NICK  2222
+333     NIRAJ 2333
+
+
+AS WE CAN  SEE RELATION BETWEEN TABLE PERSON AND TABLE CAR WITH SAME USER 'NICK' ON THE BOTH TABLES
+THATS RELATION OF TABLES
+
+
+
+
+WAYS TO CONNECT TO DATABASE SERVER(COMPUTER):
+-GUI CLIENT:THROUGH GUI INTERFACE 
+-TERMINAL: PSQL OR COMMAND PROMPT OR TERMINAL
+-APPLICATION: POSTICO,PGADMIN
+
+
+
+
+HOW TO ACCESS USER DEFAULT I.E postgres in the psql:
+1.open psql TERMINAL
+2.Press enter for default user , port number and write password.
+3.if postgres=# comes then it gets accessed
+
+
+How to use HELP
+press help after postgres=# then
+this shows:
+
+postgres=# help
+You are using psql, the command-line interface to PostgreSQL.
+Type:  \copyright for distribution terms
+       \h for help with SQL commands
+       \? for help with psql commands
+       \g or terminate with semicolon to execute query
+       \q to quit
+postgres=#
+
+
+-h is for sql commands
+-? is for psql command ETC
+
+
+HOW TO SHOW DATABASE WE HAVE IN USER 'postgres'
+
+use:'\l'
+then this shows up:
+                                                                    List of databases
+   Name    |  Owner   | Encoding | Locale Provider |          Collate           |           Ctype            | Locale | ICU Rules |   Access privileges
+-----------+----------+----------+-----------------+----------------------------+----------------------------+--------+-----------+-----------------------
+ postgres  | postgres | UTF8     | libc            | English_United States.1252 | English_United States.1252 |        |           |
+ template0 | postgres | UTF8     | libc            | English_United States.1252 | English_United States.1252 |        |           | =c/postgres          +
+           |          |          |                 |                            |                            |        |           | postgres=CTc/postgres
+ template1 | postgres | UTF8     | libc            | English_United States.1252 | English_United States.1252 |        |           | =c/postgres          +
+           |          |          |                 |                            |                            |        |           | postgres=CTc/postgres
+ test      | postgres | UTF8     | libc            | English_United States.1252 | English_United States.1252 |        |           |
+(4 rows)
+
+
+
+
+-Those on name sides are databases
+
+
+
+
+HOW TO CREATE DATABASES
+-ON PSQL AFTER LOGIN AS USER
+TYPE:CREATE DATABASE test;
+(DONT FORGET ';' AFTER THESE MANIPULATING COMMANDS)
+
+
+
+
+
+
+
+
+
+
+
+HOW TO CONNECT TO THE SPECIFIC DATABASE FOR MANIPULATION:
+1.open command PROMPT
+2. type psql --help to get all needed commands
+3. To login in terminal and connect to specific known database
+: psql -h localhost -p 5432 -U postgres test
+
+
+HOW TO CONNECT TO DATABASE FOR MANIPULATION AFTER SEEING THEM MANUALLY
+1.open command PROMPT
+2. login to user: psql -U postgres 
+3.type '\l' to see all DB as
+                                                                      List of databases
+   Name    |  Owner   | Encoding | Locale Provider |          Collate           |           Ctype            | Locale | ICU Rules |   Access privileges
+-----------+----------+----------+-----------------+----------------------------+----------------------------+--------+-----------+-----------------------
+ postgres  | postgres | UTF8     | libc            | English_United States.1252 | English_United States.1252 |        |           |
+ template0 | postgres | UTF8     | libc            | English_United States.1252 | English_United States.1252 |        |           | =c/postgres          +
+           |          |          |                 |                            |                            |        |           | postgres=CTc/postgres
+ template1 | postgres | UTF8     | libc            | English_United States.1252 | English_United States.1252 |        |           | =c/postgres          +
+           |          |          |                 |                            |                            |        |           | postgres=CTc/postgres
+ test      | postgres | UTF8     | libc            | English_United States.1252 | English_United States.1252 |        |           |
+ try       | postgres | UTF8     | libc            | English_United States.1252 | English_United States.1252 |        |           |
+(5 rows)
+
+
+
+
+Name are the name of databases so pick the one which you want to connect. I pick test
+
+4. Connect to databases: \c test
+
+
+
+-h->hostname
+-p->portname
+-U is username
+\c is connect
+\l is List
+
+
+
+
+HOW TO DROP THE DATABASES
+NOTE: DO NOT USE IN IMPORTANT CASES UNLESS YOU HAVE THEIR BACKUP
+-DROP DATABASE test;
+(We can create the database in command prompt same way: CREATE DATABASE test;)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
